@@ -7,6 +7,12 @@ const PRIVATE_KEY = process.env.PRIVATE_KEY;
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.17",
+  settings: {
+    optimizer: {
+      enabled: true,
+      runs: 200,
+    },
+  },
   networks:{
     hardhat: {
       allowUnlimitedContractSize: true
@@ -14,8 +20,7 @@ module.exports = {
     goerli:{
       url: QUICKNODE_HTTP_URL,
       accounts:[PRIVATE_KEY],
-      gasPrice: 20000000000,
-      gas: 6000000,
+
     }
   }
 };
